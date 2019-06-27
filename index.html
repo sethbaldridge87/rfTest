@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RF Test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <title>Document</title>
+    <script>
+    $(document).ready(function(){
+        $('#mobile_nav img').click(function(){
+            if ($('#sideNav').hasClass('mobile')) {
+                $('#sideNav').animate({left:'-60px'});
+                $('#sideNav').removeClass('mobile');
+            } else {
+                $('#sideNav').animate({left:'0'});
+                $('#sideNav').addClass('mobile');
+            }
+        });
+        $(window).resize(function(){
+            $('#sideNav').removeClass('mobile');
+            if($(window).width() >= 535){
+                $('#sideNav').css('left','0');
+            } else {
+                $('#sideNav').css('left','-60px');
+            }
+        })
+    });
+    </script>
 </head>
 <body>
     <div id="mobile_nav">
@@ -17,8 +41,8 @@
     <div id="sideNav">
         <ul>
             <a href="#"><li><img src="icons/logo.svg" alt="Logo" /></li></a>
-            <a href="#"><li><img class="fade" src="icons/search.svg" alt="Search" /></li></a>
-            <a href="#"><li><img class="fade" src="icons/update.svg" alt="Update" /></li></a>
+            <a href="#"><li><img class="faded" src="icons/search.svg" alt="Search" /></li></a>
+            <a href="#"><li><img class="faded" src="icons/update.svg" alt="Update" /></li></a>
             <hr>
             <a href="#"><li><img src="icons/home.svg" alt="Home" /></li></a>
             <a href="#"><li><img src="icons/explore.svg" alt="Explore" /></li></a>
@@ -38,10 +62,10 @@
     </div>
     <div id="main">
         <div id="top">
-            <div class="container" id="badgeOutput">
-                <div>
+            <div class="containment" id="badgeOutput">
+                <div id="badge_header">
                     <h2>Badge Output</h2>
-                    <span><img src="icons/edit.svg" alt="Edit"/></span>
+                    <span data-toggle="modal" data-target="#RFmodal"><img src="icons/edit.svg" alt="Edit"/></span>
                 </div>
                 <hr>
                 <div><p><b>First Name: </b>Allison</p></div>
@@ -51,7 +75,7 @@
                 <div><p><b>Onsite: </b>JVA</p></div>
                 <div><p><b>Onsite-Aux: </b>1</p></div>
                 <br>
-                <div class="row">
+                <div class="line">
                     <p><b>Check-in: </b>09/16/16 7:51 AM</p>
                     <span>
                         <img src="icons/delete.svg" alt="Delete" />
@@ -59,18 +83,18 @@
                     </span>
                 </div>
             </div>
-            <div class="container" id="calendar">
+            <div class="containment" id="calendar">
                 <div id="calendar_header">
                     <h2>Sunday</h2>
                     <span>July 15, 2018</span>
                 </div>
                 <hr>
-                <div class="row">
+                <div class="line">
                     <div class="timeStamp"><p><b>07:00 AM</b></p></div>
                     <div><p>Find Sessions</p></div>
                 </div>
                 <hr>
-                <div class="row">
+                <div class="line">
                     <div class="timeStamp"><p><b>08:00 AM</b></p></div>
                     <div class="activity"><span>BR1058 Exchange Search and knowledge discovery until Storage Technologies</span><br><span><b>08:00 AM - 08:45 AM</b></span></div>
                     <div class="calIcons">
@@ -79,12 +103,12 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row">
+                <div class="line">
                     <div class="timeStamp"><p><b>09:00 AM</b></p></div>
                     <div><p>Find Sessions</p></div>
                 </div>
                 <hr>
-                <div class="row">
+                <div class="line">
                     <div class="timeStamp"><p><b>10:00 AM</b></p></div>
                     <div class="activity"><span>BR1063 Write Data virtualization by Hadoop</span><br><span><b>10:00 AM - 10:45 AM</b></span></div>
                     <div class="calIcons">
@@ -93,18 +117,18 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row">
+                <div class="line">
                     <div class="timeStamp"><p><b>11:00 AM</b></p></div>
                     <div><p>Find Sessions</p></div>
                 </div>
             </div>
         </div>
         <div id="bottom">
-            <div class="container" id="files">
+            <div class="containment" id="files">
                 <div>
                     <table>
                         <tr>
-                            <th><input type="checkbox" /></th>
+                            <th><input type="checkbox" /><div class="checkbox"></div></th>
                             <th>File Name</th>
                             <th>File Type</th>
                             <th>File Create Date</th>
@@ -114,7 +138,7 @@
                             <th>Session Status</th>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" /><div class="checkbox"></div></td>
                             <td>New Microsoft PowerPoint Presentation_1504734033671001aMvB.pptx</td>
                             <td>Presentation</td>
                             <td>September 06, 2017 | 02:40 PM</td>
@@ -124,7 +148,7 @@
                             <td>Accepted</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" /><div class="checkbox"></div></td>
                             <td>Portugal (2)_1512154233414001toT.pptx</td>
                             <td>Presentation</td>
                             <td>December 01, 2017 | 10:50 AM</td>
@@ -134,7 +158,7 @@
                             <td>Accepted</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" /><div class="checkbox"></div></td>
                             <td>Portugal (2)_1512154233414001toT_1512162178268001wXbS.pptx</td>
                             <td>Presentation</td>
                             <td>December 01, 2017 | 01:02 PM</td>
@@ -144,7 +168,7 @@
                             <td>Accepted</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" /><div class="checkbox"></div></td>
                             <td>Session Scanning Training.pptx</td>
                             <td>Presentation</td>
                             <td>April 16, 2018 | 10:36 AM</td>
@@ -154,7 +178,7 @@
                             <td>Accepted</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" /><div class="checkbox"></div></td>
                             <td>PPT TEST2_1498603851830001mOeD_1517269636907001D3OS.pptx</td>
                             <td>Presentation</td>
                             <td>April 16, 2018 | 12:50 PM</td>
@@ -164,7 +188,7 @@
                             <td>Accepted</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" /><div class="checkbox"></div></td>
                             <td>Presentation1_1499782389871001Qvc</td>
                             <td>Presentation</td>
                             <td>July 11, 2017 | 07:13 AM</td>
@@ -174,7 +198,7 @@
                             <td>Accepted</td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" /><div class="checkbox"></div></td>
                             <td>Sweet Preso.pptx</td>
                             <td>Presentation</td>
                             <td>November 13, 2017 | 02:59 PM</td>
@@ -184,6 +208,26 @@
                             <td>Accepted</td>
                         </tr>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="RFmodal" tabindex="-1" role="dialog" aria-labelledby="RFModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="RFModalLabel">Badge Output</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus rutrum tellus pellentesque eu tincidunt tortor. Dictum at tempor commodo ullamcorper a lacus vestibulum sed. Sed elementum tempus egestas sed sed risus. Integer quis auctor elit sed vulputate mi sit amet. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Ut sem viverra aliquet eget sit amet tellus cras. </p>
+                    <p>Ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Nisi porta lorem mollis aliquam ut porttitor leo. Leo integer malesuada nunc vel. Diam donec adipiscing tristique risus. Neque laoreet suspendisse interdum consectetur. Sit amet consectetur adipiscing elit pellentesque. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" id="cancel_button" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn" id="submit_button">Submit</button>
                 </div>
             </div>
         </div>

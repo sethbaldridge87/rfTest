@@ -16,5 +16,4 @@ $(document).ready(function(){
             $('#sideNav').css('left','-60px');
         }
     })
-    
 });

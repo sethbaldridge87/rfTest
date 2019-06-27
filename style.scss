@@ -1,0 +1,306 @@
+$colors: (
+    color1: rgba(120,7,143,1),
+    color2: rgba(255,3,116,1),
+    warning: rgb(255, 47, 40),
+    backColor:rgb(236, 231, 245),
+    text:rgba(0,0,0,.5),
+    shadow: rgb(136, 136, 136)
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+};
+
+body {
+    background: color(backColor);
+    font-family: 'Open Sans', sans-serif;
+    margin:0;
+    padding:0 0 0 60px;
+}
+h1,h2,h3,h4,h5 {
+    color: color(text);
+    display: inline;
+}
+p {
+    color: color(text);
+}
+.line {
+    position: relative;
+    display: flex;
+    color: color(text);
+}
+#mobile_nav {
+    position: fixed;
+    display: none;
+    background: linear-gradient(90deg, color(color1) 0%, color(color2) 100%);
+    width: 100%;
+    z-index: 1;
+}
+#mobile_nav img {
+    filter: invert(100%);
+    width: 40px;
+    cursor: pointer;
+}
+#sideNav {
+    padding-top:17.5px;
+    position: fixed;
+    height: 98vh;
+    width: 60px;
+    display: inline-block;
+    background: linear-gradient(0deg, color(color1) 0%, color(color2) 100%);
+    left: 0;
+}
+*, ::after, ::before {
+    box-sizing: initial;
+}
+#sideFooter {
+    position: absolute;
+    bottom: 0;
+}
+#sideFooter hr {
+    margin-right: -22px;
+}
+#sideNav ul {
+    list-style-type: none;
+    margin:0;
+    padding: 10px 0 0;
+}
+#sideNav img {
+    width: 20px;
+    padding: 0 0 10px 18px;
+    filter: invert(100%);
+}
+.faded {
+    filter: invert(80%) !important;
+}
+hr {
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid color(backColor);
+    margin: 1em 0; 
+    padding: 0; 
+}
+#main {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+#calendar_header, #badge_header {
+    padding-top: 10px;
+}
+#main img {
+    cursor:pointer;
+    vertical-align: top;
+}
+#main .containment {
+    margin: 10px;
+}
+#top {
+    display: flex;
+    margin-bottom: 15px;
+}
+#badgeOutput {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    background-color: #fff;
+    box-shadow: 2.5px 2.5px 2.5px color(shadow)
+}
+#badgeOutput p, #badgeOutput h2, #calendar h2 {
+    padding-left: 15px;
+}
+#badgeOutput img {
+    filter: invert(60%);
+    margin: 0 5px;
+}
+#badgeOutput span {
+    position:absolute;
+    right:0;
+    margin:10px;
+}
+#calendar {
+    height: 100%;
+    width: 60%;
+    background-color: #fff;
+    box-shadow: 2.5px 2.5px 2.5px color(shadow);
+    padding-bottom: 15px;
+}
+#calendar b {
+    color: color(text);
+}
+#calendar p {
+    color: color(color1);
+}
+#calendar img {
+    filter: invert(14%) sepia(68%) saturate(4646%) hue-rotate(284deg) brightness(78%) contrast(110%);
+    margin: 0 5px;
+}
+#calendar .line {
+    margin: -15px 10px -15px;
+}
+#calendar_header span {
+    margin-left: 20px;
+}
+#calendar span {
+    color: rgba(0,0,0,0.5);
+    font-size: 15px;
+}
+.calIcons {
+    margin:auto;
+    position: absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    height:20px
+}
+.activity {
+    width: 60%;
+}
+.timeStamp b {
+    border-right: 2px solid color(warning);
+    padding-right: 10px;
+    margin-right: 5px;
+}
+.timeStamp {
+    min-width: 100px;
+}
+#files {
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2.5px 2.5px 2.5px color(shadow);
+    overflow-x: scroll;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    padding: 15px;
+    position:relative;
+    color: #000;
+    cursor: pointer;
+}
+th {
+    border-bottom: 1px solid rgba(120,7,143,1);
+    text-align: left;
+    padding: 15px;
+    color: rgba(120,7,143,1);
+    text-transform: uppercase;
+    position:relative;
+}
+input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+}
+.checkbox {
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    height: 15px;
+    width: 15px;
+    margin:auto;
+    background-color: #fff;
+    border: 1px solid color(color1);
+    cursor: pointer;
+}
+.checkbox:hover {
+    background-color: #eee;
+}
+.checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+input:checked ~ .checkbox:after {
+    display: block;
+}
+input:checked ~ .checkbox {
+    background-color: color(color1);
+}
+.checkbox:after {
+    left: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+#RFmodal h5 {
+    color: #fff;
+}
+ .modal-header {
+    background: color(color2);
+}
+#submit_button {
+    background: color(color1);
+    color: #fff;
+}
+#cancel_button {
+    background: color(shadow);
+    color: #fff;
+}
+@media screen and (max-height: 575px) {
+    #sideNav {
+        height: auto;
+        position: absolute;
+    }
+    #sideFooter {
+        position: relative;
+    }
+    #sideFooter hr {
+        margin-right: auto;
+    }
+}
+@media screen and (max-width: 900px) {
+    #top {
+        display: block;
+        height: auto;
+    }
+    #badgeOutput, #calendar {
+        width: auto;
+    }
+}
+@media screen and (max-width: 551px) {
+    body {
+        padding: 0;
+    }
+    #main {
+        width: 96vw;
+        height: auto;
+        margin-top: 55px;
+    }
+    #sideNav {
+        z-index: 1;
+        position: fixed;
+        left:-60px;
+        top:40px;
+    }
+    #sideFooter {
+        position: fixed;
+        bottom: 0;
+    }
+    #mobile_nav {
+        display: block;
+    }
+    #files {
+        min-width: 0;
+    }
+}
+@media screen and (max-width: 380px) {
+    .activity {
+        width: 40%;
+    }
+}
