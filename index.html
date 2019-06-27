@@ -11,6 +11,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="mobile_nav">
+        <img src="icons/menu.svg" alt="mobile" />
+    </div>
     <div id="sideNav">
         <ul>
             <a href="#"><li><img src="icons/logo.svg" alt="Logo" /></li></a>
@@ -35,7 +38,7 @@
     </div>
     <div id="main">
         <div id="top">
-            <div id="badgeOutput">
+            <div class="container" id="badgeOutput">
                 <div>
                     <h2>Badge Output</h2>
                     <span><img src="icons/edit.svg" alt="Edit"/></span>
@@ -47,9 +50,16 @@
                 <div><p><b>Company: </b>Bio-IT World</p></div>
                 <div><p><b>Onsite: </b>JVA</p></div>
                 <div><p><b>Onsite-Aux: </b>1</p></div>
-                <div><p><b>Check-in: </b>09/16/16 7:51 AM</p></div>
+                <br>
+                <div class="row">
+                    <p><b>Check-in: </b>09/16/16 7:51 AM</p>
+                    <span>
+                        <img src="icons/delete.svg" alt="Delete" />
+                        <img src="icons/print.svg" alt="Print" />
+                    </span>
+                </div>
             </div>
-            <div id="calendar">
+            <div class="container" id="calendar">
                 <div id="calendar_header">
                     <h2>Sunday</h2>
                     <span>July 15, 2018</span>
@@ -62,7 +72,11 @@
                 <hr>
                 <div class="row">
                     <div class="timeStamp"><p><b>08:00 AM</b></p></div>
-                    <div><span>BR1058 Exchange Search and knowledge discovery until Storage Technologies</span><br><span><b>08:00 AM - 08:45 AM</b></span></div>
+                    <div class="activity"><span>BR1058 Exchange Search and knowledge discovery until Storage Technologies</span><br><span><b>08:00 AM - 08:45 AM</b></span></div>
+                    <div class="calIcons">
+                        <img src="icons/edit.svg" alt="Edit" />
+                        <img src="icons/delete.svg" alt="Delete" />
+                    </div>
                 </div>
                 <hr>
                 <div class="row">
@@ -72,7 +86,11 @@
                 <hr>
                 <div class="row">
                     <div class="timeStamp"><p><b>10:00 AM</b></p></div>
-                    <div><span>BR1063 Write Data virtualization by Hadoop</span><br><span><b>10:00 AM - 10:45 AM</b></span></div>
+                    <div class="activity"><span>BR1063 Write Data virtualization by Hadoop</span><br><span><b>10:00 AM - 10:45 AM</b></span></div>
+                    <div class="calIcons">
+                        <img src="icons/edit.svg" alt="Edit" />
+                        <img src="icons/delete.svg" alt="Delete" />
+                    </div>
                 </div>
                 <hr>
                 <div class="row">
@@ -82,9 +100,90 @@
             </div>
         </div>
         <div id="bottom">
-            <div id="files">
+            <div class="container" id="files">
                 <div>
-                    <h2>Table for Files</h2>
+                    <table>
+                        <tr>
+                            <th><input type="checkbox" /></th>
+                            <th>File Name</th>
+                            <th>File Type</th>
+                            <th>File Create Date</th>
+                            <th>Published Status</th>
+                            <th>Session Name</th>
+                            <th>Session Code</th>
+                            <th>Session Status</th>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>New Microsoft PowerPoint Presentation_1504734033671001aMvB.pptx</td>
+                            <td>Presentation</td>
+                            <td>September 06, 2017 | 02:40 PM</td>
+                            <td>Not Published</td>
+                            <td>Reject Data integration until Column-oriented databases</td>
+                            <td>BR1000</td>
+                            <td>Accepted</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>Portugal (2)_1512154233414001toT.pptx</td>
+                            <td>Presentation</td>
+                            <td>December 01, 2017 | 10:50 AM</td>
+                            <td>Not Published</td>
+                            <td>Promise Data virtualization for Hadoop</td>
+                            <td>BR1003</td>
+                            <td>Accepted</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>Portugal (2)_1512154233414001toT_1512162178268001wXbS.pptx</td>
+                            <td>Presentation</td>
+                            <td>December 01, 2017 | 01:02 PM</td>
+                            <td>Not Published</td>
+                            <td>Promise Data virtualization for Hadoop</td>
+                            <td>BR1003</td>
+                            <td>Accepted</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>Session Scanning Training.pptx</td>
+                            <td>Presentation</td>
+                            <td>April 16, 2018 | 10:36 AM</td>
+                            <td>Not Published</td>
+                            <td>Reach In-memory data fabric unlike PIG</td>
+                            <td>BR1005</td>
+                            <td>Accepted</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>PPT TEST2_1498603851830001mOeD_1517269636907001D3OS.pptx</td>
+                            <td>Presentation</td>
+                            <td>April 16, 2018 | 12:50 PM</td>
+                            <td>Not Published</td>
+                            <td>Reach In-memory data fabric unlike PIG</td>
+                            <td>BR1005</td>
+                            <td>Accepted</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>Presentation1_1499782389871001Qvc</td>
+                            <td>Presentation</td>
+                            <td>July 11, 2017 | 07:13 AM</td>
+                            <td>Not Published</td>
+                            <td>Participate Stream analytics throughout SkyTree</td>
+                            <td>BR1019</td>
+                            <td>Accepted</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>Sweet Preso.pptx</td>
+                            <td>Presentation</td>
+                            <td>November 13, 2017 | 02:59 PM</td>
+                            <td>Published</td>
+                            <td>Add Data integration upon Column-oriented databases</td>
+                            <td>BR1020</td>
+                            <td>Accepted</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
