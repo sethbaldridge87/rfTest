@@ -13,6 +13,7 @@ p {
 }
 .row {
     position: relative;
+    display: flex;
 }
 #sideNav {
     position: relative;
@@ -84,15 +85,20 @@ hr {
     background-color: #fff;
     box-shadow: 2.5px 2.5px 2.5px rgb(136, 136, 136);
 }
+#calendar_header span {
+    margin-left: 20px;
+}
 #calendar span {
     color: rgba(0,0,0,0.5);
     font-size: 15px;
-    margin-left: 90px;
 }
-#calendar b {
+.timeStamp b {
     border-right: 2px solid red;
     padding-right: 10px;
     margin-right: 5px;
+}
+.timeStamp {
+    min-width: 100px;
 }
 #files {
     height: 100%;
@@ -117,9 +123,6 @@ hr {
     body {
         background: #0f0;
     }
-    #main {
-
-    }
     #top {
         display: block;
         height: auto;
@@ -134,16 +137,17 @@ hr {
     }
     #main {
         width: auto;
+        height: auto;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    p,span,#calendar span {
+        font-size: .75em;
     }
 }
 @media screen and (max-width: 380px) {
     body {
         background: #00f;
-    }
-    h2 {
-        font-size: 1em;
-    }
-    p {
-        font-size: .75em;
     }
 }
